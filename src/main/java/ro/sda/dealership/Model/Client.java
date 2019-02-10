@@ -8,10 +8,6 @@ public class  Client {
     private String adress;
 
 
-
-    public Client() {
-    }
-
     public long getId() {
         return id;
     }
