@@ -1,8 +1,8 @@
 package ro.sda.dealership.Model;
 
 public class Car {
-    String carModel;
-    Integer priceCar;
-    String carColor;
-
+    private String carModel;
+    private Integer priceCar;
+    private String carColor;
+    private Integer carID;
 }
