@@ -38,6 +38,9 @@ public class ClientMenu extends AbstractMenu {
                 break;
             case 5:
                 System.out.println("Select client to delete");
+                Long id = new Scanner(System.in).nextLong();
+                clientDAO.deleteById(id);
+                break;
             case 0:
                 System.out.println("Exiting to Main menu");
                 break;
