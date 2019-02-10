@@ -3,15 +3,12 @@ package ro.sda.dealership.Model;
 public class Car {
     private Integer carID;
     private String carModel;
-    private Integer priceCar;
+    private Double priceCar;
     private String carColor;
-
-    public Car(Integer carID, String carModel, Integer priceCar, String carColor) {
-        this.carID = carID;
-        this.carModel = carModel;
-        this.priceCar = priceCar;
-        this.carColor = carColor;
-    }
+    private Integer engineCapacity;
+    private String bodyType;
+    private String transmission;
+    private String driveType; // 2wd / 4wd // awd
 
     public Integer getCarID() {
         return carID;
@@ -29,11 +26,11 @@ public class Car {
         this.carModel = carModel;
     }
 
-    public Integer getPriceCar() {
+    public Double getPriceCar() {
         return priceCar;
     }
 
-    public void setPriceCar(Integer priceCar) {
+    public void setPriceCar(Double priceCar) {
         this.priceCar = priceCar;
     }
 
@@ -43,5 +40,37 @@ public class Car {
 
     public void setCarColor(String carColor) {
         this.carColor = carColor;
+    }
+
+    public Integer getEngineCapacity() {
+        return engineCapacity;
+    }
+
+    public void setEngineCapacity(Integer engineCapacity) {
+        this.engineCapacity = engineCapacity;
+    }
+
+    public String getBodyType() {
+        return bodyType;
+    }
+
+    public void setBodyType(String bodyType) {
+        this.bodyType = bodyType;
+    }
+
+    public String getTransmission() {
+        return transmission;
+    }
+
+    public void setTransmission(String transmission) {
+        this.transmission = transmission;
+    }
+
+    public String getDriveType() {
+        return driveType;
+    }
+
+    public void setDriveType(String driveType) {
+        this.driveType = driveType;
     }
 }
