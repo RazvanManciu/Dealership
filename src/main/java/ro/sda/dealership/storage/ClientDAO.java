@@ -41,11 +41,13 @@ public class ClientDAO {
     }
 
     public void deleteById(Long id) {
+        Client deletedClient = null;
         for (Client client: clients){
             if (client.getId().equals(id)){
-                clients.remove(client);
+                deletedClient = client;
             }
         }
+        clients.remove(deletedClient);
     }
 
     private Long generateNewId() {

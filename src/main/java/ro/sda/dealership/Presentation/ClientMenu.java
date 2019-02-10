@@ -2,8 +2,6 @@ package ro.sda.dealership.Presentation;
 
 import ro.sda.dealership.Model.Client;
 import ro.sda.dealership.storage.ClientDAO;
-
-import java.util.List;
 import java.util.Scanner;
 
 public class ClientMenu extends AbstractMenu {
@@ -30,7 +28,7 @@ public class ClientMenu extends AbstractMenu {
                 displayClientDetails();
                 break;
             case 3:
-                System.out.println("Edit client");
+                editAddress();
                 break;
             case 4:
                 Client newClient = reader.read();
@@ -47,6 +45,16 @@ public class ClientMenu extends AbstractMenu {
             default:
                 System.out.println("Invalid option");
         }
+    }
+
+    private void editAddress() {
+        System.out.println("Select client to delete");
+        Long id = new Scanner(System.in).nextLong();
+        System.out.println("Enter new address: ");
+        String address = new Scanner(System.in).nextLine();
+        Client client = clientDAO.findById(id);
+        client.setAdress(address);
+        clientDAO.update(client);
     }
 
     private void displayClientDetails() {
