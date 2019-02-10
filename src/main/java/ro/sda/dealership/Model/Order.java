@@ -3,17 +3,10 @@ package ro.sda.dealership.Model;
 public class Order {
     private Integer orderID;
     private Car car;
-    private String client;
+    private Client client;
     private String offerDetails;
     private Agent agent;
 
-    public Order(Integer orderID, Car car, String client, String offerDetails, Agent agent) {
-        this.orderID = orderID;
-        this.car = car;
-        this.client = client;
-        this.offerDetails = offerDetails;
-        this.agent = agent;
-    }
 
     public Integer getOrderID() {
         return orderID;
@@ -31,11 +24,11 @@ public class Order {
         this.car = car;
     }
 
-    public String getClient() {
+    public Client getClient() {
         return client;
     }
 
-    public void setClient(String client) {
+    public void setClient(Client client) {
         this.client = client;
     }
 

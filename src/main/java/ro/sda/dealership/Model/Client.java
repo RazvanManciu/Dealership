@@ -1,19 +1,13 @@
 package ro.sda.dealership.Model;
 
-public class Client {
+public class  Client {
     private long id;
     private String name;
     private String phoneNumber;
     private String socialId;
     private String adress;
 
-    public Client(long id, String name, String phoneNumber, String socialId, String adress) {
-        this.id = id;
-        this.name = name;
-        this.phoneNumber = phoneNumber;
-        this.socialId = socialId;
-        this.adress = adress;
-    }
+
 
     public Client() {
     }

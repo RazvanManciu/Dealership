@@ -18,7 +18,7 @@ public class MainMenu extends AbstractMenu {
                 break;
             case 2:
                 System.out.println("Agents menu");
-                AgentMenu agentMenu = new AgentMenu();
+                ClientMenu agentMenu = new ClientMenu();
                 agentMenu.displayMenu();
                 break;
             case 3:

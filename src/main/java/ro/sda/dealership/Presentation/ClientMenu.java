@@ -1,6 +1,8 @@
 package ro.sda.dealership.Presentation;
 
-public class AgentMenu extends AbstractMenu {
+import ro.sda.dealership.Model.Client;
+
+public class ClientMenu extends AbstractMenu {
 
     protected void displayOption() {
         System.out.println("1.View all agents");
@@ -14,19 +16,22 @@ public class AgentMenu extends AbstractMenu {
     protected void executeComand(Integer option) {
         switch (option) {
             case 1:
-                System.out.println("List of agents");
+                System.out.println("List of clients");
                 break;
             case 2:
-                System.out.println("Agent details are:");
+                System.out.println("Client details are:");
                 break;
             case 3:
-                System.out.println("Edit agent");
+                System.out.println("Edit client");
                 break;
             case 4:
-                System.out.println("Add new agent here");
+                ClientReader reader = new ClientReader();
+                ClientWriter writer = new ClientWriter();
+                Client client = reader.read();
+                writer.write(client);
                 break;
             case 5:
-                System.out.println("Select agent to delete");
+                System.out.println("Select client to delete");
             case 0:
                 System.out.println("Exiting to Main menu");
                 break;

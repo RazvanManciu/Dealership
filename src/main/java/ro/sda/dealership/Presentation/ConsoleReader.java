@@ -1,6 +1,6 @@
 package ro.sda.dealership.Presentation;
 
-public interface Reader<T> {
+public interface ConsoleReader<T> {
     T read();
 
 }
