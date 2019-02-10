@@ -5,7 +5,7 @@ import ro.sda.dealership.Model.Client;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ClientDAO {
+public class ClientDAO implements GenericDAO<Client> {
 
     private List<Client> clients = new ArrayList<Client>();
 
