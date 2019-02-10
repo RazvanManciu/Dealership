@@ -1,34 +1,40 @@
 package ro.sda.dealership.Presentation;
 
 import ro.sda.dealership.Model.Client;
+import ro.sda.dealership.storage.ClientDAO;
+
+import java.util.List;
+import java.util.Scanner;
 
 public class ClientMenu extends AbstractMenu {
 
+    ClientDAO clientDAO = new ClientDAO();
+    ClientReader reader = new ClientReader();
+    ClientWriter writer = new ClientWriter();
+
     protected void displayOption() {
-        System.out.println("1.View all agents");
-        System.out.println("2.View agent details");
-        System.out.println("3.Edit agent");
-        System.out.println("4.Add new agent");
-        System.out.println("5.Delete agent");
+        System.out.println("1.View all clients");
+        System.out.println("2.View client details");
+        System.out.println("3.Edit client");
+        System.out.println("4.Add new client");
+        System.out.println("5.Delete client");
         System.out.println("0.Exit");
     }
 
     protected void executeComand(Integer option) {
         switch (option) {
             case 1:
-                System.out.println("List of clients");
+                writer.writeAll(clientDAO.findAll());
                 break;
             case 2:
-                System.out.println("Client details are:");
+                displayClientDetails();
                 break;
             case 3:
                 System.out.println("Edit client");
                 break;
             case 4:
-                ClientReader reader = new ClientReader();
-                ClientWriter writer = new ClientWriter();
-                Client client = reader.read();
-                writer.write(client);
+                Client newClient = reader.read();
+                clientDAO.add(newClient);
                 break;
             case 5:
                 System.out.println("Select client to delete");
@@ -38,5 +44,13 @@ public class ClientMenu extends AbstractMenu {
             default:
                 System.out.println("Invalid option");
         }
+    }
+
+    private void displayClientDetails() {
+        System.out.println("Chose cliend by Id:");
+        Scanner scanner = new Scanner(System.in);
+        Long id = scanner.nextLong();
+        Client searchedClient = clientDAO.findById(id);
+        writer.write(searchedClient);
     }
 }

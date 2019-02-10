@@ -1,18 +1,18 @@
 package ro.sda.dealership.Model;
 
 public class  Client {
-    private long id;
+    private Long id;
     private String name;
     private String phoneNumber;
     private String socialId;
     private String adress;
 
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
