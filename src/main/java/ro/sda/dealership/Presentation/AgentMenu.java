@@ -1,32 +1,32 @@
 package ro.sda.dealership.Presentation;
 
-public class ProductMenu extends AbstractMenu {
+public class AgentMenu extends AbstractMenu{
 
     protected void displayOption() {
-        System.out.println("1.View all products");
-        System.out.println("2.View product details");
-        System.out.println("3.Edit product");
-        System.out.println("4.Add new product");
-        System.out.println("5.Delete product");
+        System.out.println("1.View all agents");
+        System.out.println("2.View agent details");
+        System.out.println("3.Edit agent");
+        System.out.println("4.Add new agent");
+        System.out.println("5.Delete agent");
         System.out.println("0.Exit");
     }
 
     protected void executeComand(Integer option) {
         switch (option) {
             case 1:
-                System.out.println("List of products");
+                System.out.println("List of agents");
                 break;
             case 2:
-                System.out.println("Product details are:");
+                System.out.println("Agent details are:");
                 break;
             case 3:
-                System.out.println("Edit product");
+                System.out.println("Edit agent");
                 break;
             case 4:
-                System.out.println("Add new product here");
+                System.out.println("Add new agent here");
                 break;
             case 5:
-                System.out.println("Select product to delete");
+                System.out.println("Select agent to delete");
             case 0:
                 System.out.println("Exiting to Main menu");
                 break;
