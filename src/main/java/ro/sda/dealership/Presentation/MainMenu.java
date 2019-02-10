@@ -1,38 +1,20 @@
-package ro.sda.dealership;
+package ro.sda.dealership.Presentation;
 
-import ro.sda.dealership.Presentation.ProductMenu;
+public class MainMenu extends AbstractMenu {
 
-import java.util.Scanner;
-
-public class Menu {
-    public void displayMenu() {
-        Integer option = Integer.MAX_VALUE;
-        while (option != 0) {
-            displayOptions();
-            option = readOption();
-            executeComand(option);
-        }
-    }
-
-    private void displayOptions() {
+    protected void displayOption() {
         System.out.println("1.Products");
         System.out.println("2.Clients");
         System.out.println("3.Orders");
         System.out.println("0.Exit");
     }
 
-    private Integer readOption() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Your option is: ");
-        return scanner.nextInt();
-    }
-
-    private void executeComand(Integer option) {
+    protected void executeComand(Integer option) {
         switch (option) {
             case 1:
                 System.out.println("Products menu");
                 ProductMenu productMenu = new ProductMenu();
-                productMenu.displayProductMenu();
+                productMenu.displayMenu();
                 break;
             case 2:
                 System.out.println("Clients menu");
