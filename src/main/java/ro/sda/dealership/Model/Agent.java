@@ -1,8 +1,8 @@
 package ro.sda.dealership.Model;
 
 public class Agent {
-    Integer agentID;
-    String agentName;
+    private Integer agentID;
+    private String agentName;
 
     public Agent(Integer agentID, String agentName) {
         this.agentID = agentID;
