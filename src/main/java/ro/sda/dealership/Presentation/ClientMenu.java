@@ -1,7 +1,7 @@
 package ro.sda.dealership.Presentation;
 
 import ro.sda.dealership.Model.Client;
-import ro.sda.dealership.storage.ClientDAO;
+import ro.sda.dealership.Storage.ClientDAO;
 import java.util.Scanner;
 
 public class ClientMenu extends AbstractMenu {
@@ -58,7 +58,7 @@ public class ClientMenu extends AbstractMenu {
     }
 
     private void displayClientDetails() {
-        System.out.println("Chose cliend by Id:");
+        System.out.println("Choose cliend by Id: ");
         Scanner scanner = new Scanner(System.in);
         Long id = scanner.nextLong();
         Client searchedClient = clientDAO.findById(id);

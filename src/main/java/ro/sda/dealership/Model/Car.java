@@ -1,7 +1,7 @@
 package ro.sda.dealership.Model;
 
 public class Car {
-    private Integer carID;
+    private Long carID;
     private String carModel;
     private Double priceCar;
     private String carColor;
@@ -10,11 +10,12 @@ public class Car {
     private String transmission;
     private String driveType; // 2wd / 4wd // awd
 
-    public Integer getCarID() {
+    public Long getCarID() {
         return carID;
     }
 
-    public void setCarID(Integer carID) {
+    public void setCarID(Long carID) {
+
         this.carID = carID;
     }
 

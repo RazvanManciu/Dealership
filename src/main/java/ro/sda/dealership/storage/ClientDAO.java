@@ -1,14 +1,11 @@
-package ro.sda.dealership.storage;
+package ro.sda.dealership.Storage;
 
 import ro.sda.dealership.Model.Client;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class ClientDAO implements GenericDAO<Client> {
-
     private List<Client> clients = new ArrayList<Client>();
-
 
     public List<Client> findAll() {
         return clients;

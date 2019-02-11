@@ -1,6 +1,4 @@
-package ro.sda.dealership.storage;
-
-import ro.sda.dealership.Model.Client;
+package ro.sda.dealership.Storage;
 
 import java.util.List;
 
