@@ -1,6 +1,14 @@
 package ro.sda.dealership.Presentation;
 
+import ro.sda.dealership.Model.Order;
+import ro.sda.dealership.Storage.OrderDAO;
+import java.util.Scanner;
+
 public class OrderMenu extends AbstractMenu {
+
+    OrderDAO orderDAO = new OrderDAO();
+    OrderReader reader = new OrderReader();
+    OrderWriter writer = new OrderWriter();
 
     protected void displayOption() {
         System.out.println("1.View all orders");
@@ -14,19 +22,22 @@ public class OrderMenu extends AbstractMenu {
     protected void executeComand(Integer option) {
         switch (option) {
             case 1:
-                System.out.println("List of orders");
+               writer.writeAll(orderDAO.findAll());
                 break;
             case 2:
-                System.out.println("Order details are:");
+               displayOrderDetails();
                 break;
             case 3:
-                System.out.println("Edit order:");
+               editOrderStatus();
                 break;
             case 4:
-                System.out.println("Add new order here");
+               Order newOrder = reader.read();
+               orderDAO.add(newOrder);
                 break;
             case 5:
                 System.out.println("Select order to delete");
+                Long id = new Scanner(System.in).nextLong();
+                orderDAO.deleteById(id);
             case 0:
                 System.out.println("Exiting to Main menu");
                 break;
@@ -35,4 +46,21 @@ public class OrderMenu extends AbstractMenu {
         }
     }
 
+    private void editOrderStatus(){
+        System.out.println("Select order to delete");
+        Long id = new Scanner(System.in).nextLong();
+        System.out.println("Enter new order: ");
+        String status = new Scanner(System.in).nextLine();
+        Order order = orderDAO.findById(id);
+        order.setStatus(status);
+        orderDAO.update(order);
+    }
+
+    private void displayOrderDetails(){
+        System.out.println("Choose order by Id: ");
+        Scanner scanner = new Scanner(System.in);
+        Long id = scanner.nextLong();
+        Order searchedOrder = orderDAO.findById(id);
+        writer.write(searchedOrder);
+    }
 }

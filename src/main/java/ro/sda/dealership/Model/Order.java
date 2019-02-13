@@ -3,18 +3,18 @@ package ro.sda.dealership.Model;
 import java.sql.Timestamp;
 
 public class Order {
-    private Integer orderID;
+    private Long orderID;
     private Car car;
     private Client client;
     private Timestamp orderDate;
     private Agent agent;
     private String status;  // placed, accepted, payed, delivered, canceled
 
-    public Integer getOrderID() {
+    public Long getOrderID() {
         return orderID;
     }
 
-    public void setOrderID(Integer orderID) {
+    public void setOrderID(Long orderID) {
         this.orderID = orderID;
     }
 
