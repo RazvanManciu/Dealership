@@ -28,12 +28,12 @@ public class StockWriter implements ConsoleWriter<Stock> {
 
     private void writeSummary(Stock stock){
         System.out.print("Stock ID: " + stock.getStockID());
-        System.out.print("Card ID: " + stock.getCar().getCarID());
-        System.out.print("Car model: " + stock.getCar().getCarModel());
-        System.out.print("Car color: " + stock.getCar().getCarColor());
-        System.out.print("Car quantity: " + stock.getQuantity());
-        System.out.print("Car location: " + stock.getLocation());
-        System.out.print("Car price: " + stock.getCar().getCarPrice());
+        System.out.print(", Card ID: " + stock.getCar().getCarID());
+        System.out.print(", Car model: " + stock.getCar().getCarModel());
+        System.out.print(", Car color: " + stock.getCar().getCarColor());
+        System.out.print(", Car quantity: " + stock.getQuantity());
+        System.out.print(", Car location: " + stock.getLocation());
+        System.out.print(", Car price: " + stock.getCar().getCarPrice());
     }
 
 }

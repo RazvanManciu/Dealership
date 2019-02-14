@@ -25,7 +25,7 @@ public class ClientWriter implements ConsoleWriter<Client> {
 
     private void writeSummary(Client client) {
         System.out.print("Id: " + client.getId());
-        System.out.print(" Name: " + client.getName());
-        System.out.println(" Adress: " + client.getAdress());
+        System.out.print(", Name: " + client.getName());
+        System.out.println(", Adress: " + client.getAdress());
     }
 }

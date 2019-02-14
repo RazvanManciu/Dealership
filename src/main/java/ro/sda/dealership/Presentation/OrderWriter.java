@@ -29,12 +29,12 @@ public class OrderWriter implements ConsoleWriter<Order> {
 
     private void writeSummary(Order order){
         System.out.print("Order Id: " + order.getOrderID());
-        System.out.print("Client Id: " + order.getClient().getId());
-        System.out.print("Client name: " + order.getClient().getName());
-        System.out.print("Car model: " + order.getCar().getCarModel());
-        System.out.print("Car color: " + order.getCar().getCarColor());
-        System.out.print("Order date: " + order.getOrderDate());
-        System.out.print("Agent name: " + order.getAgent());
-        System.out.println("Order Status: " + order.getStatus());
+        System.out.print(", Client Id: " + order.getClient().getId());
+        System.out.print(", Client name: " + order.getClient().getName());
+        System.out.print(", Car model: " + order.getCar().getCarModel());
+        System.out.print(", Car color: " + order.getCar().getCarColor());
+        System.out.print(", Order date: " + order.getOrderDate());
+        System.out.print(", Agent name: " + order.getAgent());
+        System.out.println(", Order Status: " + order.getStatus());
     }
 }

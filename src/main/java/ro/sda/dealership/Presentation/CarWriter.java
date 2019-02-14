@@ -24,7 +24,7 @@ public class CarWriter implements ConsoleWriter<Car> {
 
     private void writeSummary(Car car){
         System.out.print("Id: " + car.getCarID());
-        System.out.print("Car model : " + car.getCarModel());
-        System.out.println("Car color : " + car.getCarColor());
+        System.out.print(", Car model: " + car.getCarModel());
+        System.out.println(", Car color: " + car.getCarColor());
     }
 }
