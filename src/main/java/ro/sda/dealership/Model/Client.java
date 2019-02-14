@@ -7,7 +7,6 @@ public class  Client {
     private String socialId;
     private String adress;
 
-
     public Long getId() {
         return id;
     }

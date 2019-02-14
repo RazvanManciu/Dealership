@@ -4,10 +4,10 @@ import java.sql.Timestamp;
 
 public class Order {
     private Long orderID;
-    private Car car;
     private Client client;
+    private Car car;
     private Timestamp orderDate;
-    private Agent agent;
+    private String agent;
     private String status;  // placed, accepted, payed, delivered, canceled
 
     public Long getOrderID() {
@@ -42,11 +42,11 @@ public class Order {
         this.orderDate = orderDate;
     }
 
-    public Agent getAgent() {
+    public String getAgent() {
         return agent;
     }
 
-    public void setAgent(Agent agent) {
+    public void setAgent(String agent) {
         this.agent = agent;
     }
 

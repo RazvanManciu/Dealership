@@ -17,7 +17,7 @@ public class StockReader implements ConsoleReader<Stock> {
             System.out.println("Select car id for stock to be added: ");
             Long carID = scanner.nextLong();
             car = carDAO.findById(carID);
-        } while (car != null);
+        } while (car == null);
         System.out.println("Car quantity: ");
         Integer quantity = scanner.nextInt();
         System.out.println("Car location: ");

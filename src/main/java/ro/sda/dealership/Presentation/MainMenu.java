@@ -6,6 +6,7 @@ public class MainMenu extends AbstractMenu {
         System.out.println("1. Cars");
         System.out.println("2. Clients");
         System.out.println("3. Orders");
+        System.out.println("4. Stocks");
         System.out.println("0. Exit");
     }
 
@@ -18,13 +19,18 @@ public class MainMenu extends AbstractMenu {
                 break;
             case 2:
                 System.out.println("Clients menu");
-                ClientMenu agentMenu = new ClientMenu();
-                agentMenu.displayMenu();
+                ClientMenu clientMenu = new ClientMenu();
+                clientMenu.displayMenu();
                 break;
             case 3:
                 System.out.println("Orders menu");
                 OrderMenu orderMenu = new OrderMenu();
                 orderMenu.displayMenu();
+                break;
+            case 4:
+                System.out.println("Stocks menu");
+                StockMenu stockMenu = new StockMenu();
+                stockMenu.displayMenu();
                 break;
             case 0:
                 System.out.println("Exiting...");

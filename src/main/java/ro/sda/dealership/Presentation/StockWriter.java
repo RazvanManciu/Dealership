@@ -15,7 +15,7 @@ public class StockWriter implements ConsoleWriter<Stock> {
         System.out.println("Car price: " + stock.getCar().getCarPrice());
     }
 
-    public void writeAll(List<Stock> stocks){
+    void writeAll(List<Stock> stocks){
         if(stocks.size() == 0){
             System.out.println("No cars available");
         }else{

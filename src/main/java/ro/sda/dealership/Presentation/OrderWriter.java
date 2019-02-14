@@ -5,12 +5,18 @@ import ro.sda.dealership.Model.Order;
 import java.util.List;
 
 public class OrderWriter implements ConsoleWriter<Order> {
-    public void write(Order value){
-        System.out.println("Id: " + value.getOrderID());
-        System.out.println("OrderStatus: " + value.getStatus());
+    public void write(Order order){
+        System.out.println("Order Id: " + order.getOrderID());
+        System.out.println("Client Id: " + order.getClient().getId());
+        System.out.println("Client name: " + order.getClient().getName());
+        System.out.println("Car model: " + order.getCar().getCarModel());
+        System.out.println("Car color: " + order.getCar().getCarColor());
+        System.out.println("Order date: " + order.getOrderDate());
+        System.out.println("Agent name: " + order.getAgent());
+        System.out.println("Order Status: " + order.getStatus());
     }
 
-    public void writeAll(List<Order> orders){
+    void writeAll(List<Order> orders){
         if(orders.size() == 0){
             System.out.println("No orders available");
         }else{
@@ -22,7 +28,13 @@ public class OrderWriter implements ConsoleWriter<Order> {
     }
 
     private void writeSummary(Order order){
-        System.out.print("Id: " + order.getOrderID());
-        System.out.println("OrderStatus: " + order.getStatus());
+        System.out.print("Order Id: " + order.getOrderID());
+        System.out.print("Client Id: " + order.getClient().getId());
+        System.out.print("Client name: " + order.getClient().getName());
+        System.out.print("Car model: " + order.getCar().getCarModel());
+        System.out.print("Car color: " + order.getCar().getCarColor());
+        System.out.print("Order date: " + order.getOrderDate());
+        System.out.print("Agent name: " + order.getAgent());
+        System.out.println("Order Status: " + order.getStatus());
     }
 }

@@ -49,7 +49,7 @@ public class OrderMenu extends AbstractMenu {
     private void editOrderStatus(){
         System.out.println("Select order to edit");
         Long id = new Scanner(System.in).nextLong();
-        System.out.println("Enter new order: ");
+        System.out.println("Enter order new status: ");
         String status = new Scanner(System.in).nextLine();
         Order order = orderDAO.findById(id);
         order.setStatus(status);
