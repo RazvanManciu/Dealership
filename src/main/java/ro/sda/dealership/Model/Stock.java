@@ -1,9 +1,18 @@
 package ro.sda.dealership.Model;
 
 public class Stock {
+    private Long stockID;
     private Car car;
     private Integer quantity;
     private String location;
+
+    public Long getStockID() {
+        return stockID;
+    }
+
+    public void setStockID(Long stockID) {
+        this.stockID = stockID;
+    }
 
     public Car getCar() {
         return car;

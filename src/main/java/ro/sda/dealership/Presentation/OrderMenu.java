@@ -6,9 +6,9 @@ import java.util.Scanner;
 
 public class OrderMenu extends AbstractMenu {
 
-    OrderDAO orderDAO = new OrderDAO();
-    OrderReader reader = new OrderReader();
-    OrderWriter writer = new OrderWriter();
+    private OrderDAO orderDAO = new OrderDAO();
+    private OrderReader reader = new OrderReader();
+    private OrderWriter writer = new OrderWriter();
 
     protected void displayOption() {
         System.out.println("1.View all orders");
@@ -47,7 +47,7 @@ public class OrderMenu extends AbstractMenu {
     }
 
     private void editOrderStatus(){
-        System.out.println("Select order to delete");
+        System.out.println("Select order to edit");
         Long id = new Scanner(System.in).nextLong();
         System.out.println("Enter new order: ");
         String status = new Scanner(System.in).nextLine();

@@ -6,9 +6,9 @@ import java.util.Scanner;
 
 public class CarMenu extends AbstractMenu {
 
-    CarDAO carDAO = new CarDAO();
-    CarReader reader = new CarReader();
-    CarWriter writer = new CarWriter();
+    private CarDAO carDAO = new CarDAO();
+    private CarReader reader = new CarReader();
+    private CarWriter writer = new CarWriter();
 
     protected void displayOption() {
         System.out.println("1.View all cars");
@@ -46,7 +46,7 @@ public class CarMenu extends AbstractMenu {
     }
 
     private void editCarModel(){
-        System.out.println("Select car to delete");
+        System.out.println("Select car to edit");
         Long id = new Scanner(System.in).nextLong();
         System.out.println("Enter new car: ");
         String carModel = new Scanner(System.in).nextLine();

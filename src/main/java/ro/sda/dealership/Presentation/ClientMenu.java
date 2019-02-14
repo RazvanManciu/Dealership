@@ -6,9 +6,9 @@ import java.util.Scanner;
 
 public class ClientMenu extends AbstractMenu {
 
-    ClientDAO clientDAO = new ClientDAO();
-    ClientReader reader = new ClientReader();
-    ClientWriter writer = new ClientWriter();
+    private ClientDAO clientDAO = new ClientDAO();
+    private ClientReader reader = new ClientReader();
+    private ClientWriter writer = new ClientWriter();
 
     protected void displayOption() {
         System.out.println("1.View all clients");
@@ -48,7 +48,7 @@ public class ClientMenu extends AbstractMenu {
     }
 
     private void editAddress() {
-        System.out.println("Select client to delete");
+        System.out.println("Select client to edit");
         Long id = new Scanner(System.in).nextLong();
         System.out.println("Enter new address: ");
         String address = new Scanner(System.in).nextLine();

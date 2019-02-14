@@ -27,7 +27,7 @@ public class Car {
         this.carModel = carModel;
     }
 
-    public Double getPriceCar() {
+    public Double getCarPrice() {
         return priceCar;
     }
 
