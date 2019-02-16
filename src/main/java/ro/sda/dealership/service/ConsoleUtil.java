@@ -4,22 +4,21 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class ConsoleUtil {
-    static Scanner scanner = new Scanner(System.in);
+    private static Scanner scanner = new Scanner(System.in);
+    private static final Integer MAX_RETRIES = 2;
 
-    static final Integer MAX_RETRIES = 2;
-
-    public static Long readLong(String inputMessage, String invalidInputMessage){
+    public static Long readLong(String item){
         Long result = null;
-
         int retries = 0;
 
-        while (retries < MAX_RETRIES && result == null){
+        while (retries <= MAX_RETRIES && result == null){
             try {
-                System.out.print(inputMessage);
+                System.out.print(item + "ID: ");
                 result = scanner.nextLong();
 
             }catch (InputMismatchException e){
-                System.out.println(invalidInputMessage);
+                System.out.println();
+                System.out.println("Invalid " + item + " id. Please, retry!");
             }
             retries ++;
         }
