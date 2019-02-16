@@ -1,6 +1,6 @@
-package ro.sda.dealership.Presentation;
+package ro.sda.dealership.presentation;
 
-import ro.sda.dealership.Model.Client;
+import ro.sda.dealership.model.Client;
 
 import java.util.Scanner;
 

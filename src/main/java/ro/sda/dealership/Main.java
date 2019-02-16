@@ -1,6 +1,6 @@
 package ro.sda.dealership;
 
-import ro.sda.dealership.Presentation.MainMenu;
+import ro.sda.dealership.presentation.MainMenu;
 
 public class Main {
     public static void main(String[] args) {

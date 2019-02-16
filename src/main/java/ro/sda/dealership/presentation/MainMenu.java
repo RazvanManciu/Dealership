@@ -1,4 +1,4 @@
-package ro.sda.dealership.Presentation;
+package ro.sda.dealership.presentation;
 
 public class MainMenu extends AbstractMenu {
 

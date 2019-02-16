@@ -1,4 +1,4 @@
-package ro.sda.dealership.Storage;
+package ro.sda.dealership.storage;
 
 import java.util.List;
 

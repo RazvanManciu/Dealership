@@ -1,4 +1,4 @@
-package ro.sda.dealership.Model;
+package ro.sda.dealership.model;
 
 public class Stock {
     private Long stockID;

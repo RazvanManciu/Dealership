@@ -1,6 +1,6 @@
-package ro.sda.dealership.Storage;
+package ro.sda.dealership.storage;
 
-import ro.sda.dealership.Model.Car;
+import ro.sda.dealership.model.Car;
 import java.util.ArrayList;
 import java.util.List;
 
