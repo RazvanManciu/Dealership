@@ -2,21 +2,12 @@ package ro.sda.dealership.model;
 
 import java.sql.Timestamp;
 
-public class Order {
-    private Long orderID;
+public class Order extends Entity {
     private Client client;
     private Car car;
     private Timestamp orderDate;
     private String agent;
     private String status;  // placed, accepted, payed, delivered, canceled
-
-    public Long getOrderID() {
-        return orderID;
-    }
-
-    public void setOrderID(Long orderID) {
-        this.orderID = orderID;
-    }
 
     public Car getCar() {
         return car;

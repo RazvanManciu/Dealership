@@ -1,19 +1,10 @@
 package ro.sda.dealership.model;
 
-public class  Client {
-    private Long id;
+public class  Client extends Entity{
     private String name;
     private String phoneNumber;
     private String socialId;
     private String adress;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;

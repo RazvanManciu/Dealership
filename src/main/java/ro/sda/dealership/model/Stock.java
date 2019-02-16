@@ -1,18 +1,9 @@
 package ro.sda.dealership.model;
 
-public class Stock {
-    private Long stockID;
+public class Stock extends Entity {
     private Car car;
     private Integer quantity;
     private String location;
-
-    public Long getStockID() {
-        return stockID;
-    }
-
-    public void setStockID(Long stockID) {
-        this.stockID = stockID;
-    }
 
     public Car getCar() {
         return car;

@@ -1,17 +1,64 @@
 package ro.sda.dealership.storage;
 
+import ro.sda.dealership.model.Entity;
+
 import java.util.List;
 
-public interface GenericDAO<T> {
-    List<T> findAll();
+public abstract class GenericDAO<T extends Entity> {
 
-    T findById(Long id);
+    protected abstract List<T> getItems();
 
-    void update(T value);
+    public List<T> findAll() {
+        return getItems();
+    }
 
-    T add(T value);
+    public T findById(Long id) {
+        for (T item : getItems()) {
+            if (item.getId().equals(id)) {
+                return item;
+            }
+        }
+        return null;
+    }
 
-    void delete(T value);
+    public void update(T item) {
+        delete(item);
+        add(item);
+    }
 
-    void deleteById(Long id);
+    public T add(T item) {
+        if (item.getId() == null) {
+            item.setId(generateNewId());
+        }
+        getItems().add(item);
+        return item;
+    }
+
+    public void delete(T item) {
+        deleteById(item.getId());
+    }
+
+    public void deleteById(Long id) {
+        T deletedItem = null;
+        for (T item: getItems()){
+            if (item.getId().equals(id)){
+                deletedItem = item;
+            }
+        }
+        getItems().remove(deletedItem);
+    }
+
+    private Long generateNewId() {
+        return findMaxId() + 1;
+    }
+
+    private Long findMaxId() {
+        Long max = -1L;
+        for (T item : getItems()) {
+            if (max < item.getId()) {
+                max = item.getId();
+            }
+        }
+        return max;
+    }
 }

@@ -6,8 +6,8 @@ import java.util.List;
 
 public class StockWriter implements ConsoleWriter<Stock> {
     public void write(Stock stock) {
-        System.out.println("Stock ID: " + stock.getStockID());
-        System.out.print("Card ID: " + stock.getCar().getCarID());
+        System.out.println("Stock ID: " + stock.getId());
+        System.out.print("Card ID: " + stock.getCar().getId());
         System.out.println("Car model: " + stock.getCar().getCarModel());
         System.out.println("Car color: " + stock.getCar().getCarColor());
         System.out.println("Car quantity: " + stock.getQuantity());
@@ -27,8 +27,8 @@ public class StockWriter implements ConsoleWriter<Stock> {
     }
 
     private void writeSummary(Stock stock){
-        System.out.print("Stock ID: " + stock.getStockID());
-        System.out.print(", Card ID: " + stock.getCar().getCarID());
+        System.out.print("Stock ID: " + stock.getId());
+        System.out.print(", Card ID: " + stock.getCar().getId());
         System.out.print(", Car model: " + stock.getCar().getCarModel());
         System.out.print(", Car color: " + stock.getCar().getCarColor());
         System.out.print(", Car quantity: " + stock.getQuantity());

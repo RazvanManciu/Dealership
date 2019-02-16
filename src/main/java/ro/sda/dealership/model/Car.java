@@ -1,7 +1,6 @@
 package ro.sda.dealership.model;
 
-public class Car {
-    private Long carID;
+public class Car extends Entity{
     private String carModel;
     private Double priceCar;
     private String carColor;
@@ -9,15 +8,6 @@ public class Car {
     private String bodyType;
     private String transmission;
     private String driveType; // 2wd / 4wd // awd
-
-    public Long getCarID() {
-        return carID;
-    }
-
-    public void setCarID(Long carID) {
-
-        this.carID = carID;
-    }
 
     public String getCarModel() {
         return carModel;

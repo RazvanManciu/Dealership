@@ -6,7 +6,7 @@ import java.util.List;
 
 public class OrderWriter implements ConsoleWriter<Order> {
     public void write(Order order){
-        System.out.println("Order Id: " + order.getOrderID());
+        System.out.println("Order Id: " + order.getId());
         System.out.println("Client Id: " + order.getClient().getId());
         System.out.println("Client name: " + order.getClient().getName());
         System.out.println("Car model: " + order.getCar().getCarModel());
@@ -28,7 +28,7 @@ public class OrderWriter implements ConsoleWriter<Order> {
     }
 
     private void writeSummary(Order order){
-        System.out.print("Order Id: " + order.getOrderID());
+        System.out.print("Order Id: " + order.getId());
         System.out.print(", Client Id: " + order.getClient().getId());
         System.out.print(", Client name: " + order.getClient().getName());
         System.out.print(", Car model: " + order.getCar().getCarModel());

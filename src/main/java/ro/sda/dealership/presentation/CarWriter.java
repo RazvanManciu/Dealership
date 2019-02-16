@@ -6,7 +6,7 @@ import java.util.List;
 
 public class CarWriter implements ConsoleWriter<Car> {
     public void write(Car value){
-        System.out.println("Id: " + value.getCarID());
+        System.out.println("Id: " + value.getId());
         System.out.println("Car model: " + value.getCarModel());
         System.out.println("Car color: " + value.getCarColor());
     }
@@ -23,7 +23,7 @@ public class CarWriter implements ConsoleWriter<Car> {
     }
 
     private void writeSummary(Car car){
-        System.out.print("Id: " + car.getCarID());
+        System.out.print("Id: " + car.getId());
         System.out.print(", Car model: " + car.getCarModel());
         System.out.println(", Car color: " + car.getCarColor());
     }
