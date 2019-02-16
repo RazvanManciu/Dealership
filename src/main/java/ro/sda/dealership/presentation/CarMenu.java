@@ -37,6 +37,7 @@ public class CarMenu extends AbstractMenu {
             case 5:
                 System.out.println("Select car to delete");
                 Long id = new Scanner(System.in).nextLong();
+                carDAO.deleteById(id);
             case 0:
                 System.out.println("Exiting to Main menu");
                 break;
