@@ -10,4 +10,6 @@ public class OrderDAO extends GenericDAO<Order> {
     protected List<Order> getItems() {
         return orders;
     }
+
+    public List<Order> findAllByClientId(Long clientId){}
 }
