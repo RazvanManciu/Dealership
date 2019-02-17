@@ -12,7 +12,7 @@ public class OrderWriter implements ConsoleWriter<Order> {
         System.out.println("Car model: " + order.getCar().getCarModel());
         System.out.println("Car color: " + order.getCar().getCarColor());
         System.out.println("Order date: " + order.getOrderDate());
-        System.out.println("Agent name: " + order.getAgent());
+        System.out.println("Price: " + order.getPrice());
         System.out.println("Order Status: " + order.getStatus());
     }
 
@@ -34,7 +34,7 @@ public class OrderWriter implements ConsoleWriter<Order> {
         System.out.print(", Car model: " + order.getCar().getCarModel());
         System.out.print(", Car color: " + order.getCar().getCarColor());
         System.out.print(", Order date: " + order.getOrderDate());
-        System.out.print(", Agent name: " + order.getAgent());
+        System.out.print(", Order price: " + order.getPrice());
         System.out.println(", Order Status: " + order.getStatus());
     }
 }

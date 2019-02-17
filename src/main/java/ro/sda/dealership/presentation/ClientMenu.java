@@ -5,7 +5,6 @@ import ro.sda.dealership.storage.ClientDAO;
 import java.util.Scanner;
 
 public class ClientMenu extends AbstractMenu {
-
     private ClientDAO clientDAO = new ClientDAO();
     private ClientReader reader = new ClientReader();
     private ClientWriter writer = new ClientWriter();
@@ -25,19 +24,42 @@ public class ClientMenu extends AbstractMenu {
                 writer.writeAll(clientDAO.findAll());
                 break;
             case 2:
-                displayClientDetails();
+                if (clientDAO.findAll().isEmpty()) {
+                    System.out.println("No clients available.");
+                } else {
+                    writer.writeAll(clientDAO.findAll());
+                    System.out.println("Select client to view: ");
+                    displayClientDetails();
+                }
                 break;
             case 3:
-                editAddress();
+                if (clientDAO.findAll().isEmpty()) {
+                    System.out.println("No clients available.");
+                } else {
+                    writer.writeAll(clientDAO.findAll());
+                    System.out.print("Select client to edit: ");
+                    editClient();
+                }
                 break;
             case 4:
                 Client newClient = reader.read();
                 clientDAO.add(newClient);
+                System.out.println("Client added");
                 break;
             case 5:
-                System.out.println("Select client to delete");
-                Long id = new Scanner(System.in).nextLong();
-                clientDAO.deleteById(id);
+                if (clientDAO.findAll().isEmpty()) {
+                    System.out.println("No clients available.");
+                } else {
+                    writer.writeAll(clientDAO.findAll());
+                    System.out.print("Select a client to delete: ");
+                    Long id = ConsoleUtil.readLong("Client");
+                    boolean isDeleted = clientDAO.deleteById(id);
+                    if (!isDeleted) {
+                        System.out.println("Client not found");
+                    } else {
+                        System.out.println("Client deleted");
+                    }
+                }
                 break;
             case 0:
                 System.out.println("Exiting to Main menu");
@@ -47,21 +69,31 @@ public class ClientMenu extends AbstractMenu {
         }
     }
 
-    private void editAddress() {
-        System.out.println("Select client to edit");
-        Long id = new Scanner(System.in).nextLong();
-        System.out.println("Enter new address: ");
-        String address = new Scanner(System.in).nextLine();
-        Client client = clientDAO.findById(id);
-        client.setAdress(address);
-        clientDAO.update(client);
+    private void editClient() {
+        Scanner scanner = new Scanner(System.in);
+        Client foundClient = clientDAO.findById(ConsoleUtil.readLong("Client"));
+        if (foundClient == null) {
+            System.out.println("Client not found");
+        } else {
+            System.out.println("Enter the new name: ");
+            foundClient.setName(scanner.next());
+            System.out.println("Enter the new phone number: ");
+            String phoneNumber = scanner.next().trim();
+            foundClient.setPhoneNumber(phoneNumber);
+            System.out.print("Enter new adress: ");
+            foundClient.setAdress(scanner.nextLine());
+            clientDAO.update(foundClient);
+            System.out.println("Client updated");
+        }
     }
 
     private void displayClientDetails() {
-        System.out.println("Choose cliend by Id: ");
-        Scanner scanner = new Scanner(System.in);
-        Long id = scanner.nextLong();
-        Client searchedClient = clientDAO.findById(id);
-        writer.write(searchedClient);
+        Client foundClient = clientDAO.findById(ConsoleUtil.readLong("Client"));
+        if (foundClient == null) {
+            System.out.println("Client not found");
+        } else {
+            System.out.println("Client details are: ");
+            writer.write(foundClient);
+        }
     }
 }

@@ -8,7 +8,7 @@ public class Order extends Entity {
     private Double price;
     private Timestamp orderDate;
     private String agent;
-    private String status;  // placed, accepted, payed, delivered, canceled
+    private OrderStatus status;  // placed, accepted, payed, delivered, canceled
 
     public Car getCar() {
         return car;
@@ -50,11 +50,11 @@ public class Order extends Entity {
         this.price = price;
     }
 
-    public String getStatus() {
+    public OrderStatus getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(OrderStatus status) {
         this.status = status;
     }
 }

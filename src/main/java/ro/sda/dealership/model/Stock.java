@@ -7,7 +7,6 @@ public class Stock extends Entity {
     private String location;
 
     public Stock() {
-
     }
 
     public Stock(Car car, Integer quantity, String location) {

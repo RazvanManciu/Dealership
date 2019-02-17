@@ -15,34 +15,60 @@ public class OrderReader implements ConsoleReader<Order> {
     private CarDAO carDAO = new CarDAO();
 
     public Order read() {
-        Order order = new Order();
-        Client client;
-        Car car;
-
-        if(carDAO.findAll().isEmpty() || clientDAO.findAll().isEmpty()){
+        if (clientDAO.findAll().isEmpty() || carDAO.findAll().isEmpty()) {
             return null;
         }
+        Order order = new Order();
+        new ClientWriter().writeAll(clientDAO.findAll());
+        Client selectedClient = null;
+        do{
+            System.out.println("Select client for order to be added: ");
+            selectedClient = clientDAO.findById(ConsoleUtil.readLong("Client"));
+        } while (selectedClient == null);
 
-        Scanner scanner = new Scanner(System.in);
-        do {
-            System.out.println("Select client id for order to be added: ");
-            Long clientId = scanner.nextLong();
-            client = clientDAO.findById(clientId);
-        } while (client == null);
+        new ClientWriter().writeAll(clientDAO.findAll());
+        Car selectedCar = null;
         do {
             System.out.println("Select car id for order to be added: ");
-            Long carId = scanner.nextLong();
-            car = carDAO.findById(carId);
-        } while (car == null);
+            selectedCar = carDAO.findById(ConsoleUtil.readLong("Car"));
+        } while (selectedCar == null);
+
+        System.out.print("Insert the new price: ");
+        Double newOrderPrice = ConsoleUtil.getPrice();
+
         Timestamp orderDate = new Timestamp(System.currentTimeMillis());
+
         System.out.println("Agent name: ");
-        String agentName = scanner.nextLine();
-        System.out.println("Order Status: ");
-        String orderStatus = scanner.nextLine();
-        order.setClient(client);
-        order.setOrderDate(orderDate);
-        order.setAgent(agentName);
-        order.setStatus(orderStatus);
+        String agentName = new Scanner(System.in).nextLine();
+
+        OrderStatus newOrderStatus = null;
+        do {
+        System.out.println("Enter new status (1 = ACCEPTED, 2 = PLACED, 3 = PAYED, 4 = DELIVERED, 5 = CANCELED): ");
+        int newOrderCode = new Scanner(System.in).nextInt();
+        switch (newOrderCode) {
+            case 1:
+                newOrderStatus = OrderStatus.ACCEPTED;
+                break;
+            case 2:
+                newOrderStatus = OrderStatus.PLACED;
+                break;
+            case 3:
+                newOrderStatus = OrderStatus.PAYED;
+                break;
+            case 4:
+                newOrderStatus = OrderStatus.DELIVERED;
+                break;
+            case 5:
+                newOrderStatus = OrderStatus.CANCELED;
+                break;
+        }
+        } while (newOrderStatus == null);
+
+        order.setClient(selectedClient);
+        order.setCar(selectedCar);
+        order.setPrice(newOrderPrice);
+        order.setStatus(newOrderStatus);
+
         return order;
     }
 

@@ -13,11 +13,11 @@ public class ConsoleUtil {
 
         while (retries <= MAX_RETRIES && result == null){
             try {
-                System.out.print(item + "ID: ");
-                result = scanner.nextLong();
-
-            }catch (InputMismatchException e){
                 System.out.println();
+                System.out.print(item + " ID: ");
+                result = scanner.nextLong();
+            }catch (InputMismatchException e){
+                scanner.nextLine();
                 System.out.println("Invalid " + item + " id. Please, retry!");
             }
             retries ++;
@@ -26,7 +26,7 @@ public class ConsoleUtil {
     }
 
     public  static Double getPrice(){
-        double price = 0d;
+        Double price = 0d;
         while (true){
             try {
                 price = scanner.nextDouble();

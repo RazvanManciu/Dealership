@@ -5,10 +5,11 @@ import ro.sda.dealership.model.Car;
 import java.util.List;
 
 public class CarWriter implements ConsoleWriter<Car> {
-    public void write(Car value){
-        System.out.println("Id: " + value.getId());
-        System.out.println("Car model: " + value.getCarModel());
-        System.out.println("Car color: " + value.getCarColor());
+    public void write(Car car){
+        System.out.println("Id: " + car.getId());
+        System.out.println("Car model: " + car.getCarModel());
+        System.out.println("Car color: " + car.getCarColor());
+        System.out.println("Car price: " + car.getCarPrice());
     }
 
     public void writeAll(List<Car> cars){
@@ -26,5 +27,6 @@ public class CarWriter implements ConsoleWriter<Car> {
         System.out.print("Id: " + car.getId());
         System.out.print(", Car model: " + car.getCarModel());
         System.out.println(", Car color: " + car.getCarColor());
+        System.out.println("Car price: " + car.getCarPrice());
     }
 }

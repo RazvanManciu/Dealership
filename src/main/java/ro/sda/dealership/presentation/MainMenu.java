@@ -3,6 +3,7 @@ package ro.sda.dealership.presentation;
 public class MainMenu extends AbstractMenu {
 
     protected void displayOption() {
+        System.out.println("Main Menu");
         System.out.println("1. Cars");
         System.out.println("2. Clients");
         System.out.println("3. Orders");
@@ -36,7 +37,7 @@ public class MainMenu extends AbstractMenu {
                 System.out.println("Exiting...");
                 break;
             default:
-                System.out.println("Invalid Option");
+                System.out.println("Invalid option");
         }
     }
 }
