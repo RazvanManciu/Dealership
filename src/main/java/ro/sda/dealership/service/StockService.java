@@ -58,6 +58,21 @@ public class StockService {
     public void deliverFromStock(Car car){
         deliverFromStock(car, Stock.DEFAULT_LOCATION, 1);
     }
+
+    public void returnToStock(Car car, String location, int quantity){
+        Stock stock = stockDAO.findByCarIdandLocation(car.getId(), location);
+        if(stock != null){
+            int newQuantity = stock.getQuantity() + quantity;
+            stock.setQuantity(newQuantity);
+            save(stock);
+        }else{
+            throw new NotFoundException("Car not in stock.");
+        }
+    }
+
+    public void returnToStock(Car car){
+        returnToStock(car,Stock.DEFAULT_LOCATION, 1);
+    }
 }
 
 

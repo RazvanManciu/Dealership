@@ -9,6 +9,7 @@ import java.util.List;
 public class OrderDAO extends GenericDAO<Order> {
     private static List<Order> orders = new ArrayList<Order>();
 
+    @Override
     protected List<Order> getItems() {
         return orders;
     }
@@ -16,7 +17,7 @@ public class OrderDAO extends GenericDAO<Order> {
     public List<Order> findAllByClientId(Long clientId){
         List<Order> orders = new ArrayList<Order>();
         for (Order order : getItems()){
-            if(order.getClient().getId() == clientId){
+            if(order.getClient().getId().equals(clientId)){
                 orders.add(order);
             }
         }
