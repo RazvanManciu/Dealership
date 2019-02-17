@@ -18,6 +18,10 @@ public class OrderReader implements ConsoleReader<Order> {
         Client client;
         Car car;
 
+        if(carDAO.findAll().isEmpty() || clientDAO.findAll().isEmpty()){
+            return null;
+        }
+
         Scanner scanner = new Scanner(System.in);
         do {
             System.out.println("Select client id for order to be added: ");
