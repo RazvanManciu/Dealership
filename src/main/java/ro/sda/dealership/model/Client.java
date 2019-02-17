@@ -5,6 +5,7 @@ public class  Client extends Entity{
     private String phoneNumber;
     private String socialId;
     private String adress;
+    private boolean active;
 
     public String getName() {
         return name;
@@ -36,5 +37,13 @@ public class  Client extends Entity{
 
     public void setAdress(String adress) {
         this.adress = adress;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
     }
 }

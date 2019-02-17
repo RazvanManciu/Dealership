@@ -1,9 +1,20 @@
 package ro.sda.dealership.model;
 
 public class Stock extends Entity {
+    public static final String DEFAULT_LOCATION = "Oradea";
     private Car car;
     private Integer quantity;
     private String location;
+
+    public Stock() {
+
+    }
+
+    public Stock(Car car, Integer quantity, String location) {
+        this.car = car;
+        this.quantity = quantity;
+        this.location = location;
+    }
 
     public Car getCar() {
         return car;
