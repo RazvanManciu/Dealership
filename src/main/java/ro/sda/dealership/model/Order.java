@@ -1,7 +1,6 @@
 package ro.sda.dealership.model;
 
 import java.sql.Timestamp;
-import java.util.List;
 
 public class Order extends Entity {
     private Client client;
@@ -9,7 +8,7 @@ public class Order extends Entity {
     private Double price;
     private Timestamp orderDate;
     private String agent;
-    private OrderStatus status;  // placed, accepted, payed, delivered, canceled
+    private String status;  // placed, accepted, payed, delivered, canceled
 
     public Car getCar() {
         return car;
@@ -43,10 +42,6 @@ public class Order extends Entity {
         this.agent = agent;
     }
 
-    public OrderStatus getStatus() {
-        return status;
-    }
-
     public Double getPrice() {
         return price;
     }
@@ -55,7 +50,11 @@ public class Order extends Entity {
         this.price = price;
     }
 
-    public void setStatus(OrderStatus status) {
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
         this.status = status;
     }
 }

@@ -10,6 +10,8 @@ import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
 
+import static ro.sda.dealership.model.OrderStatus.*;
+
 
 public class OrderService {
     private OrderDAO orderDAO = new OrderDAO();
@@ -52,7 +54,7 @@ public class OrderService {
             order.setCar(car);
             order.setPrice(car.getCarPrice());
             order.setOrderDate(new Timestamp(new Date().getTime()*1000000));
-            order.setStatus(OrderStatus.PLACED);
+            order.setStatus(PLACED);
             save(order);
         }else{
             throw new ProductNotInStockException("Not all cars are in stock.");
@@ -60,17 +62,16 @@ public class OrderService {
     }
 
     public void acceptOrder(Order order){
-        order.setStatus(OrderStatus.ACCEPTED);
-        save(order);
+        order.setStatus(ACCEPTED);
     }
 
     public void deliverOrder(Order order){
-        order.setStatus(OrderStatus.DELIVERED);
+        order.setStatus(DELIVERED);
         save(order);
     }
 
     public void payOrder(Order order){
-        order.setStatus(OrderStatus.PAYED);
+        order.setStatus(PAYED);
         save(order);
     }
 

@@ -52,7 +52,7 @@ public class OrderMenu extends AbstractMenu {
         System.out.println("Enter order new status: ");
         String status = new Scanner(System.in).nextLine();
         Order order = orderDAO.findById(id);
-        order.setStatus(status);
+        order.setOrderStatus(status);
         orderDAO.update(order);
     }
 

@@ -3,6 +3,7 @@ package ro.sda.dealership.presentation;
 import ro.sda.dealership.model.Car;
 import ro.sda.dealership.model.Client;
 import ro.sda.dealership.model.Order;
+import ro.sda.dealership.model.OrderStatus;
 import ro.sda.dealership.storage.CarDAO;
 import ro.sda.dealership.storage.ClientDAO;
 
@@ -38,7 +39,6 @@ public class OrderReader implements ConsoleReader<Order> {
         String agentName = scanner.nextLine();
         System.out.println("Order Status: ");
         String orderStatus = scanner.nextLine();
-        order.setCar(car);
         order.setClient(client);
         order.setOrderDate(orderDate);
         order.setAgent(agentName);
