@@ -23,6 +23,7 @@ public class OrderMenu extends AbstractMenu {
         System.out.println("3. Edit order");
         System.out.println("4. Add new order");
         System.out.println("5. Delete order");
+        System.out.println("6. Search order");
         System.out.println("0. Exit");
     }
 

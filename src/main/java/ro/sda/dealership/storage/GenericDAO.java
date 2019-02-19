@@ -38,7 +38,7 @@ public abstract class GenericDAO<T extends Entity> {
         deleteById(item.getId());
     }
 
-    public void deleteById(Long id) {
+    public boolean deleteById(Long id) {
         T deletedItem = null;
         for (T item: getItems()){
             if (item.getId().equals(id)){
@@ -46,6 +46,7 @@ public abstract class GenericDAO<T extends Entity> {
             }
         }
         getItems().remove(deletedItem);
+        return false;
     }
 
     private Long generateNewId() {

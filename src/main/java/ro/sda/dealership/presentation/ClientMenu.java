@@ -15,6 +15,7 @@ public class ClientMenu extends AbstractMenu {
         System.out.println("3.Edit client");
         System.out.println("4.Add new client");
         System.out.println("5.Delete client");
+        System.out.println("6.Search client");
         System.out.println("0.Exit");
     }
 
