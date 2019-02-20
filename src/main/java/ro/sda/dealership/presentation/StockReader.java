@@ -10,6 +10,9 @@ public class StockReader implements ConsoleReader<Stock> {
     private CarDAO carDAO = new CarDAO();
 
     public Stock read() {
+        if (carDAO.findAll().isEmpty()) {
+            return null;
+        }
         Stock stock = new Stock();
         Car car;
         Scanner scanner = new Scanner(System.in);

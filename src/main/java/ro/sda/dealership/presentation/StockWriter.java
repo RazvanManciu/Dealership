@@ -33,7 +33,7 @@ public class StockWriter implements ConsoleWriter<Stock> {
         System.out.print(", Car color: " + stock.getCar().getCarColor());
         System.out.print(", Car quantity: " + stock.getQuantity());
         System.out.print(", Car location: " + stock.getLocation());
-        System.out.print(", Car price: " + stock.getCar().getCarPrice());
+        System.out.println(", Car price: " + stock.getCar().getCarPrice());
     }
 
 }
