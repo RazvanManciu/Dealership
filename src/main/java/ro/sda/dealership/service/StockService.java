@@ -7,17 +7,16 @@ import ro.sda.dealership.model.Car;
 public class StockService {
     private StockDAO stockDAO = new StockDAO();
 
-    public void addCartoStock(Car car, int quantity) {
-        addCartoStock(car, quantity, Stock.DEFAULT_LOCATION);
-
+    public void addCarToStock(Car car, int quantity) {
+        addCarToStock(car, quantity, Stock.DEFAULT_LOCATION);
     }
 
-    public void addCartoStock(Car car, int quantity, String location) {
+    public void addCarToStock(Car car, int quantity, String location) {
         Stock stock = stockDAO.findByCarIdAndLocation(car.getId(), location);
         if (stock == null) {
             stock = new Stock(car, 1, location);
         }
-        //Todo: save();
+        save(stock);
     }
 
     public Stock save(Stock stock) {

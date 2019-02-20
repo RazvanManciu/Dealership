@@ -57,12 +57,13 @@ public class OrderService {
             order.setStatus(PLACED);
             save(order);
         }else{
-            throw new ProductNotInStockException("Not all cars are in stock.");
+            throw new ProductNotInStockException("The car is not in stock.");
         }
     }
 
     public void acceptOrder(Order order){
         order.setStatus(ACCEPTED);
+        save(order);
     }
 
     public void deliverOrder(Order order){

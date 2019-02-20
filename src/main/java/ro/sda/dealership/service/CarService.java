@@ -1,11 +1,9 @@
 package ro.sda.dealership.service;
 
-import ro.sda.dealership.model.Client;
 import ro.sda.dealership.storage.CarDAO;
 import ro.sda.dealership.model.Car;
 
 import java.util.List;
-import java.util.Scanner;
 
 public class CarService {
     private CarDAO carDAO = new CarDAO();
@@ -29,7 +27,7 @@ public class CarService {
         return updatedCar;
     }
 
-    public void delete(Long id){
-        carDAO.deleteById(id);
+    public boolean delete(Long id){
+        return carDAO.deleteById(id);
     }
 }
