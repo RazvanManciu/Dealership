@@ -13,7 +13,7 @@ public class StockService {
     }
 
     public void addCartoStock(Car car, int quantity, String location) {
-        Stock stock = stockDAO.findByCarIdandLocation(car.getId(), location);
+        Stock stock = stockDAO.findByCarIdAndLocation(car.getId(), location);
         if (stock == null) {
             stock = new Stock(car, 1, location);
         }
@@ -37,7 +37,7 @@ public class StockService {
 
 
     public boolean isInStock(Car car, String location){
-        Stock stock = stockDAO.findByCarIdandLocation(car.getId(), location);
+        Stock stock = stockDAO.findByCarIdAndLocation(car.getId(), location);
         if(stock != null && stock.getQuantity() > 0){
             return true;
         }
@@ -45,7 +45,7 @@ public class StockService {
     }
 
     public void deliverFromStock(Car car, String location, int quantity){
-        Stock stock = stockDAO.findByCarIdandLocation(car.getId(), location);
+        Stock stock = stockDAO.findByCarIdAndLocation(car.getId(), location);
         if(stock != null && stock.getQuantity() >= quantity){
             int newQuantity = stock.getQuantity() - quantity;
             stock.setQuantity(newQuantity);
@@ -60,7 +60,7 @@ public class StockService {
     }
 
     public void returnToStock(Car car, String location, int quantity){
-        Stock stock = stockDAO.findByCarIdandLocation(car.getId(), location);
+        Stock stock = stockDAO.findByCarIdAndLocation(car.getId(), location);
         if(stock != null){
             int newQuantity = stock.getQuantity() + quantity;
             stock.setQuantity(newQuantity);

@@ -5,7 +5,6 @@ import ro.sda.dealership.model.Entity;
 import java.util.List;
 
 public abstract class GenericDAO<T extends Entity> {
-
     protected abstract List<T> getItems();
 
     public List<T> findAll() {
@@ -45,8 +44,7 @@ public abstract class GenericDAO<T extends Entity> {
                 deletedItem = item;
             }
         }
-        getItems().remove(deletedItem);
-        return false;
+        return getItems().remove(deletedItem);
     }
 
     private Long generateNewId() {

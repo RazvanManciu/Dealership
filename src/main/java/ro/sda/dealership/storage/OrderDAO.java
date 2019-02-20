@@ -35,6 +35,6 @@ public class OrderDAO extends GenericDAO<Order> {
     }
 
     private boolean isBetween(Order order, Timestamp start, Timestamp end){
-        return (order.getOrderDate().after(start) && order.getOrderDate().before(end));
+        return order.getOrderDate().after(start) && order.getOrderDate().before(end);
     }
 }
