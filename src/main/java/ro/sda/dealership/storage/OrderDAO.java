@@ -24,6 +24,16 @@ public class OrderDAO extends GenericDAO<Order> {
         return orders;
     }
 
+    public List<Order> findAllByClientName(String clientName){
+        List<Order> orders = new ArrayList<Order>();
+        for (Order order : getItems()){
+            if(order.getClient().getName().equals(clientName)){
+                orders.add(order);
+            }
+        }
+        return orders;
+    }
+
     public List<Order> findAllBetweenDates(Timestamp start, Timestamp end){
         List<Order> orders = new ArrayList<Order>();
         for (Order order : getItems()){

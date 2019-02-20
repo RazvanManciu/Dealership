@@ -25,6 +25,10 @@ public class OrderService {
         return orderDAO.findAllByClientId(clientId);
     }
 
+    public List<Order> getOrdersByClient(String clientName){
+        return orderDAO.findAllByClientName(clientName);
+    }
+
     public List<Order> getOrdersBetweenDates(Timestamp start, Timestamp end) {
         return orderDAO.findAllBetweenDates(start, end);
     }

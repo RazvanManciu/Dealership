@@ -2,6 +2,7 @@ package ro.sda.dealership.model;
 
 public class Entity {
     private Long id;
+    private String clientName;
 
     public Long getId() {
         return id;
@@ -9,6 +10,14 @@ public class Entity {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getClientName() {
+        return clientName;
+    }
+
+    public void setClientName(String clientName) {
+        this.clientName = clientName;
     }
 
     @Override

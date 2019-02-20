@@ -1,6 +1,7 @@
 package ro.sda.dealership.presentation;
 
 import ro.sda.dealership.model.Client;
+import ro.sda.dealership.model.Order;
 import ro.sda.dealership.storage.ClientDAO;
 import java.util.Scanner;
 
@@ -98,3 +99,4 @@ public class ClientMenu extends AbstractMenu {
         }
     }
 }
+

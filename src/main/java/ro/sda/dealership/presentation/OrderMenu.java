@@ -73,6 +73,15 @@ public class OrderMenu extends AbstractMenu {
                     }
                 }
                 break;
+            case 6:
+                if(orderDAO.findAll().isEmpty()){
+                    System.out.println("No orders available.");
+                } else {
+                    writer.writeAll(orderDAO.findAll());
+                    System.out.println("Select order to view: ");
+                    displayOrderByClient();
+                }
+                break;
             case 0:
                 System.out.println("Exiting to Main menu");
                 break;
@@ -145,6 +154,17 @@ public class OrderMenu extends AbstractMenu {
             System.out.println("Order not found");
         } else {
             System.out.println("Order details are: ");
+            writer.write(searchedOrder);
+        }
+    }
+
+    private void displayOrderByClient(){
+        System.out.println("Search order by Client: ");
+        Order searchedOrder = orderDAO.findById(ConsoleUtil.readLong("Order"));
+        if(searchedOrder == null){
+            System.out.println("Order not found");
+        }else{
+            System.out.println("The searched order is: ");
             writer.write(searchedOrder);
         }
     }
